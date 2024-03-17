@@ -81,4 +81,17 @@ public class MultiplePointer {
         }
         return false;
     }
+
+    public static boolean isSubstring(String mainString, String subString) {
+        if (subString.length() > mainString.length()) return false;
+        int i = 0;
+        int j = 0;
+        while (i < mainString.length()-1) {
+            if (mainString.charAt(i) == subString.charAt(j)) j++;
+            i++;
+            if (j == subString.length()) break;
+            if (mainString.charAt(i) != subString.charAt(j) && j >= 1) j=0;
+        }
+        return j != 0;
+    }
 }

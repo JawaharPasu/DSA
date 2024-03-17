@@ -18,6 +18,7 @@ public class Main {
         //Randoms.printPatternTriangle(7);
         //Randoms.printDiamondPattern(5);
         //System.out.println(Recursion.reverse("abra"));
-        System.out.println(Recursion.palindrome("tacocat"));
+        //System.out.println(Recursion.palindrome("tacocat"));
+        System.out.println(MultiplePointer.isSubstring("hello", "he"));
     }
 }
