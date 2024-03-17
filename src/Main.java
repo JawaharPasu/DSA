@@ -1,7 +1,4 @@
-import algorithms.FrequencyCounter;
-import algorithms.MultiplePointer;
-import algorithms.Randoms;
-import algorithms.Recursion;
+import algorithms.*;
 
 import java.util.Arrays;
 import java.util.List;
@@ -19,6 +16,7 @@ public class Main {
         //Randoms.printDiamondPattern(5);
         //System.out.println(Recursion.reverse("abra"));
         //System.out.println(Recursion.palindrome("tacocat"));
-        System.out.println(MultiplePointer.isSubstring("hello", "he"));
+        //System.out.println(MultiplePointer.isSubstring("hello", "he"));
+        System.out.println(Arrays.toString(Sorting.insertionSort(new Integer[]{1, 3, 5, 2, 7, 6, 9, 8})));
     }
 }
