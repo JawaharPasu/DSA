@@ -1,6 +1,7 @@
 import algorithms.FrequencyCounter;
 import algorithms.MultiplePointer;
 import algorithms.Randoms;
+import algorithms.Recursion;
 
 import java.util.Arrays;
 import java.util.List;
@@ -15,6 +16,8 @@ public class Main {
         //System.out.println(MultiplePointer.isSubarray("hello", "hell world"));
         //System.out.println(MultiplePointer.isSubarray("abc", "acb"));
         //Randoms.printPatternTriangle(7);
-        Randoms.printDiamondPattern(3);
+        //Randoms.printDiamondPattern(5);
+        //System.out.println(Recursion.reverse("abra"));
+        System.out.println(Recursion.palindrome("tacocat"));
     }
 }
