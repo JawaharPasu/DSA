@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+        Integer[] arr = new Integer[]{5, 3, 1, 2, 7, 6, 9, 8};
         //System.out.println(FrequencyCounter.checkFrequency(List.of(1,2,3), List.of(1,2,3,4)));
         //System.out.println(FrequencyCounter.anagramCheck("cohert", "cohert"));
         //MultiplePointer.leastSumZero(List.of(-4,-3,-1,0,2,4,5));
@@ -17,7 +18,11 @@ public class Main {
         //System.out.println(Recursion.reverse("abra"));
         //System.out.println(Recursion.palindrome("tacocat"));
         //System.out.println(MultiplePointer.isSubstring("hello", "he"));
-        System.out.println(Arrays.toString(Sorting.mergeSort(new Integer[]{1, 3, 5, 2, 7, 6, 9, 8})));
+        //System.out.println(Arrays.toString(Sorting.mergeSort(new Integer[]{5, 3, 1, 2, 7, 6, 9, 8})));
         //System.out.println(Arrays.toString(Sorting.mergeArrays(new Integer[]{3,6,9}, new Integer[]{5,8,11})));
+        //System.out.println(Sorting.pivotIndex(new Integer[]{7, 9, 11, 1, 2, 5, 6, 3, 8}, 0, 8));
+        //System.out.println(Sorting.pivotIndex(new Integer[]{3, 1, 2, 5, 6, 7, 11, 9, 8}, 0, 4));
+        //System.out.println(Sorting.pivotIndex(new Integer[]{2, 1, 3, 5, 6, 7, 11, 9, 8}, 6, 8));
+        System.out.println(Arrays.toString(Sorting.quickSort(arr, 0, arr.length-1)));
     }
 }

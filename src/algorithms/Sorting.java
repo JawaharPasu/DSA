@@ -1,5 +1,7 @@
 package algorithms;
 
+import java.util.Arrays;
+
 public class Sorting {
 
     public static Integer[] bubbleSort(Integer[] arr) {
@@ -89,5 +91,38 @@ public class Sorting {
             k++;
         }
         return result;
+    }
+
+    public static Integer[] quickSort(Integer[] arr, int startIndex, int endIndex) {
+        if (startIndex<endIndex) {
+            int pivot = pivotIndex(arr,startIndex,endIndex);
+            //left
+            quickSort(arr, startIndex, pivot-1);
+            //right
+            quickSort(arr, pivot+1, endIndex);
+        }
+        return arr;
+    }
+    //7, 9, 1, 2, 5, 6, 3, 8
+    //
+    public static int pivotIndex(Integer[] arr, int startIndex, int endIndex) {
+        int pivot=startIndex;
+        int i=startIndex;
+        int startnumber = arr[startIndex];
+        int swap = 0;
+        while (i<endIndex) {
+            if (arr[i+1]<startnumber) {
+                pivot++;
+                swap = arr[i + 1];
+                arr[i + 1] = arr[pivot];
+                arr[pivot] = swap;
+            }
+            i++;
+        }
+        swap = arr[pivot];
+        arr[pivot] = arr[startIndex];
+        arr[startIndex] = swap;
+        System.out.println(Arrays.toString(arr));
+        return pivot;
     }
 }
