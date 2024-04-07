@@ -1,6 +1,8 @@
 package algorithms;
 
-import java.util.Arrays;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Sorting {
 
@@ -109,20 +111,64 @@ public class Sorting {
         int pivot=startIndex;
         int i=startIndex;
         int startnumber = arr[startIndex];
-        int swap = 0;
+        //int swap = 0;
         while (i<endIndex) {
             if (arr[i+1]<startnumber) {
                 pivot++;
-                swap = arr[i + 1];
-                arr[i + 1] = arr[pivot];
-                arr[pivot] = swap;
+                swap(arr, pivot, i+1);
             }
             i++;
         }
-        swap = arr[pivot];
-        arr[pivot] = arr[startIndex];
-        arr[startIndex] = swap;
+        swap(arr, pivot, startIndex);
         System.out.println(Arrays.toString(arr));
         return pivot;
+    }
+
+    public static Integer[] swap(Integer[] arr, int i, int j) {
+        int swap = 0;
+        swap = arr[i];
+        arr[i] = arr[j];
+        arr[j] = swap;
+        return arr;
+    }
+
+    public static Integer getDigit(Integer num, Integer position) {
+        return (int)Math.floor(Math.abs(num)/Math.pow(10, position))%10;
+    }
+
+    public static Integer digitCount(Integer num) {
+        return num==0 ? 1 : (int)Math.floor(Math.log10(Math.abs(num)))+1;
+    }
+
+    public static Integer mostDigits(Integer[] arr) {
+        int max = 0;
+        for (Integer integer : arr) {
+            max = Math.max(max, digitCount(integer));
+        }
+        return max;
+    }
+
+    public static Integer[] radixSort(Integer[] arr) {
+        int maxdigit = mostDigits(arr);
+        for (int i = 0; i< maxdigit; i++) {
+            Map<Integer, List<Integer>> mappedNumbers = new TreeMap<>();
+            for (Integer integer: arr) {
+                int digit = getDigit(integer, i);
+                if (!mappedNumbers.containsKey(digit)) {
+                    List<Integer> list = new ArrayList<>();
+                    list.add(integer);
+                    mappedNumbers.put(digit, list);
+                } else {
+                    mappedNumbers.get(digit).add(integer);
+                    //mappedNumbers.put(digit, mappedNumbers)
+                }
+            }
+            //mappedNumbers.forEach((key, value) -> System.out.println(key + " " + value));
+            Collection<List<Integer>> values = mappedNumbers.values();
+            List<Integer> integerStream = values.stream().flatMap(list -> list.stream()).collect(Collectors.toList());
+            arr = integerStream.toArray(new Integer[integerStream.size()]);
+            //System.out.println(Arrays.toString(arr));
+        }
+        return arr;
     }
 }
