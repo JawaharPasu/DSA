@@ -160,14 +160,11 @@ public class Sorting {
                     mappedNumbers.put(digit, list);
                 } else {
                     mappedNumbers.get(digit).add(integer);
-                    //mappedNumbers.put(digit, mappedNumbers)
                 }
             }
-            //mappedNumbers.forEach((key, value) -> System.out.println(key + " " + value));
             Collection<List<Integer>> values = mappedNumbers.values();
-            List<Integer> integerStream = values.stream().flatMap(list -> list.stream()).collect(Collectors.toList());
-            arr = integerStream.toArray(new Integer[integerStream.size()]);
-            //System.out.println(Arrays.toString(arr));
+            List<Integer> localSortedList = values.stream().flatMap(list -> list.stream()).collect(Collectors.toList());
+            arr = localSortedList.toArray(new Integer[localSortedList.size()]);
         }
         return arr;
     }

@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Integer[] arr = new Integer[]{5, 34, 43, 245, 745634, 63, 94566, 834};
+        Integer[] arr = new Integer[]{5, 34, 43, 44, 745634, 63, 94566, 834};
         //System.out.println(FrequencyCounter.checkFrequency(List.of(1,2,3), List.of(1,2,3,4)));
         //System.out.println(FrequencyCounter.anagramCheck("cohert", "cohert"));
         //MultiplePointer.leastSumZero(List.of(-4,-3,-1,0,2,4,5));
