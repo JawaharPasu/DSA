@@ -1,4 +1,6 @@
 import algorithms.*;
+import dataStructures.singlyLinkedLists.Node;
+import dataStructures.singlyLinkedLists.SinglyLinkedList;
 
 import java.util.Arrays;
 import java.util.List;
@@ -27,6 +29,15 @@ public class Main {
         //System.out.println(Sorting.getDigit(345,1));
         //System.out.println(Sorting.digitCount(1));
         //System.out.println(Sorting.mostDigits(arr));
-        System.out.println(Arrays.toString(Sorting.radixSort(arr)));
+        //System.out.println(Arrays.toString(Sorting.radixSort(arr)));
+        SinglyLinkedList list = new SinglyLinkedList();
+        list.push(new Node(1));
+        list.push(new Node(2));
+        list.push(new Node(3));
+        list.print();
+        System.out.println(list.pop());
+        System.out.println(list.pop());
+        System.out.println(list.pop());
+        System.out.println(list.getLength());
     }
 }
