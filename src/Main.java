@@ -32,12 +32,25 @@ public class Main {
         //System.out.println(Arrays.toString(Sorting.radixSort(arr)));
         SinglyLinkedList list = new SinglyLinkedList();
         list.push(new Node(1));
-        list.push(new Node(2));
         list.push(new Node(3));
         list.print();
-        System.out.println(list.pop());
-        System.out.println(list.pop());
-        System.out.println(list.pop());
+        System.out.println(list.get(0));
+        list.insert(new Node(2), 1);
+        System.out.println(list);
+
+        list.set(new Node(0), 0);
+        System.out.println(list);
+        //list.push(new Node(4));
+        list.push(new Node(5));
+        list.print();
+        System.out.println();
+        list.revere();
+
+//        System.out.println(list.set(new Node(4),3));
+//        System.out.println(list.set(new Node(5),2));
+//        System.out.println(list.insert(new Node(3), 2));
+//        System.out.println(list.remove(2));
+        list.print();
         System.out.println(list.getLength());
     }
 }
