@@ -1,7 +1,7 @@
 package dataStructures.singlyLinkedLists;
 
-public class SinglyLinkedList {
-    Node first, last;
+public class SinglyLinkedList<T> {
+    Node<T> first, last;
     Integer length;
 
     public SinglyLinkedList() {
@@ -10,7 +10,7 @@ public class SinglyLinkedList {
         this.length = 0;
     }
 
-    public SinglyLinkedList push(Node node) {
+    public SinglyLinkedList<T> push(Node<T> node) {
         if (this.first == null) {
             this.first = node;
             this.last = node;
@@ -23,16 +23,16 @@ public class SinglyLinkedList {
         return this;
     }
 
-    public Node pop() {
+    public Node<T> pop() {
         if (this.length == 1) {
-            Node currentNode = this.first;
+            Node<T> currentNode = this.first;
             this.first = null;
             this.last = null;
             this.length = 0;
             return currentNode;
         }
-        Node currentNode = this.first;
-        Node removedNode = this.last;
+        Node<T> currentNode = this.first;
+        Node<T> removedNode = this.last;
         while (currentNode.next != this.last) {
             currentNode = currentNode.next;
         }
@@ -42,39 +42,39 @@ public class SinglyLinkedList {
         return removedNode;
     }
 
-    public Node shift() {
-        Node returnedNode = this.first;
+    public Node<T> shift() {
+        Node<T> returnedNode = this.first;
         this.first = this.first.next;
         this.length--;
         if (this.length == 0) this.last = null;
         return returnedNode;
     }
 
-    public SinglyLinkedList unShift(Node node) {
+    public SinglyLinkedList<T> unShift(Node<T> node) {
         node.next = this.first;
         this.first = node;
         length++;
         return this;
     }
 
-    public Node get(Integer index) {
+    public Node<T> get(Integer index) {
         if (index == 0) return this.first;
         if (index>this.length) return null;
-        Node currenntNode = this.first;
+        Node<T> currenntNode = this.first;
         for (int i = 0; i<index; i++) {
             currenntNode = currenntNode.next;
         }
         return currenntNode;
     }
 
-    public SinglyLinkedList insert(Node newNode, Integer position) {
+    public SinglyLinkedList<T> insert(Node<T> newNode, Integer position) {
         if (position> this.length) return null;
         if (position == 0) {
             unShift(newNode);
             this.length++;
             return this;
         }
-        Node currentNode = this.first;
+        Node<T> currentNode = this.first;
         for(int i=0; i<position-1; i++) {
             currentNode = currentNode.next;
         }
@@ -85,14 +85,14 @@ public class SinglyLinkedList {
         return this;
     }
 
-    public SinglyLinkedList set(Node newValue, Integer position) {
+    public SinglyLinkedList<T> set(Node<T> newValue, Integer position) {
         if (position == 0) {
             newValue.next = this.first.next;
             this.first = newValue;
             return this;
         }
         if (position> this.length) return null;
-        Node currentNode = this.first;
+        Node<T> currentNode = this.first;
         for (int i=0; i<position-1;i++){
             currentNode = currentNode.next;
         }
@@ -102,22 +102,38 @@ public class SinglyLinkedList {
         return this;
     }
 
-    public Node remove(Integer position) {
+    public Node<T> remove(Integer position) {
         if (position == 0) return shift();
         if (position == this.length-1) return pop();
-        Node previousPositionNode = get(position-1);
-        Node removedNode = previousPositionNode.next;
+        Node<T> previousPositionNode = get(position-1);
+        Node<T> removedNode = previousPositionNode.next;
         previousPositionNode.next = removedNode.next;
         this.length--;
         return removedNode;
     }
 
-    public SinglyLinkedList revere(){
-        Node node = this.first;
+    /**
+     * this method reverses tbe singly linked list
+     * example 1->2->3->4->5->6->7
+     * first node -> 1, last node ->7
+     * first declare a variable node
+     * then swap the first and the last node
+     * result after swap:
+     * node ->1, firstnode->7, lastnode->1
+     * declare 2 more variables prevNode and the nextNode
+     *  prevNode            -> node                     -> nextNode (this is the state at line 136, after 1st line in the for loop)
+     *  null                -> 1                        -> 2
+     *  null                <- 1 (node.next = prevNode) -/- 2 (the next node link from 1 -> 2 is broken)
+     *  1 (prevNode = node) -/- 2 (node = nextNode)     -> 3 (the loop repeats after this)
+     * @return reversed singly linked list 7->6->5->4->3->2->1
+     *
+     */
+    public SinglyLinkedList<T> reverse(){
+        Node<T> node = this.first;
         this.first = this.last;
         this.last = node;
-        Node prevNode = null;
-        Node nextNode = null;
+        Node<T> prevNode = null;
+        Node<T> nextNode = null;
         for (int i = 0 ; i<this.length; i++) {
             nextNode = node.next;
             node.next = prevNode;
@@ -128,18 +144,18 @@ public class SinglyLinkedList {
     }
 
     public void print(){
-        Node currentNode = this.first;
+        Node<T> currentNode = this.first;
         for (int i =0; i<length;i++){
             System.out.print(currentNode.val + ",");
             currentNode = currentNode.next;
         }
     }
 
-    public Node getFirst() {
+    public Node<T> getFirst() {
         return first;
     }
 
-    public Node getLast() {
+    public Node<T> getLast() {
         return last;
     }
 

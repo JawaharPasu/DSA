@@ -1,5 +1,7 @@
 import algorithms.*;
-import dataStructures.singlyLinkedLists.Node;
+import dataStructures.DoublyLinkedList.DoublyLinkedList;
+import dataStructures.DoublyLinkedList.DoublyLinkedListGeek;
+import dataStructures.DoublyLinkedList.Node;
 import dataStructures.singlyLinkedLists.SinglyLinkedList;
 
 import java.util.Arrays;
@@ -30,27 +32,44 @@ public class Main {
         //System.out.println(Sorting.digitCount(1));
         //System.out.println(Sorting.mostDigits(arr));
         //System.out.println(Arrays.toString(Sorting.radixSort(arr)));
-        SinglyLinkedList list = new SinglyLinkedList();
-        list.push(new Node(1));
-        list.push(new Node(3));
-        list.print();
-        System.out.println(list.get(0));
-        list.insert(new Node(2), 1);
-        System.out.println(list);
+//        SinglyLinkedList list = new SinglyLinkedList();
+//        list.push(new Node(1));
+//        list.push(new Node(3));
+//        list.print();
+//        System.out.println(list.get(0));
+//        list.insert(new Node(2), 1);
+//        System.out.println(list);
+//
+//        list.set(new Node(0), 0);
+//        System.out.println(list);
+//        //list.push(new Node(4));
+//        list.push(new Node("read"));
+//        list.print();
+//        System.out.println();
+//        list.reverse();
+//
+////        System.out.println(list.set(new Node(4),3));
+////        System.out.println(list.set(new Node(5),2));
+////        System.out.println(list.insert(new Node(3), 2));
+////        System.out.println(list.remove(2));
+//        list.print();
+//        System.out.println(list.getLength());
+//        Node<Integer> node = new Node<>(0);
+//        System.out.println(node);
+//        DoublyLinkedListGeek doublyLinkedListGeek = new DoublyLinkedListGeek();
+//        doublyLinkedListGeek.push(0);
+//        doublyLinkedListGeek.push(1);
+//        doublyLinkedListGeek.push(2);
 
-        list.set(new Node(0), 0);
-        System.out.println(list);
-        //list.push(new Node(4));
-        list.push(new Node(5));
-        list.print();
-        System.out.println();
-        list.revere();
+        DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
+        Node<Integer> node1 = new Node<>(1);
+        Node<Integer> node2 = new Node<>(2);
+        Node<Integer> node3 = new Node<>(3);
 
-//        System.out.println(list.set(new Node(4),3));
-//        System.out.println(list.set(new Node(5),2));
-//        System.out.println(list.insert(new Node(3), 2));
-//        System.out.println(list.remove(2));
-        list.print();
-        System.out.println(list.getLength());
+        list.push(1);
+        list.push(2);
+        list.push(3);
+
+        System.out.println(list);
     }
 }
