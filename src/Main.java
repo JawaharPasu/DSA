@@ -1,7 +1,9 @@
 import algorithms.*;
+import dataStructures.BST.BinarySearchTree;
+import dataStructures.BST.Node;
 import dataStructures.DoublyLinkedList.DoublyLinkedList;
 import dataStructures.DoublyLinkedList.DoublyLinkedListGeek;
-import dataStructures.DoublyLinkedList.Node;
+import dataStructures.Stack;
 import dataStructures.singlyLinkedLists.SinglyLinkedList;
 
 import java.util.Arrays;
@@ -61,15 +63,34 @@ public class Main {
 //        doublyLinkedListGeek.push(1);
 //        doublyLinkedListGeek.push(2);
 
-        DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
+        /*DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
         Node<Integer> node1 = new Node<>(1);
         Node<Integer> node2 = new Node<>(2);
         Node<Integer> node3 = new Node<>(3);
 
         list.push(1);
         list.push(2);
-        list.push(3);
+        list.push(3);*/
 
-        System.out.println(list);
+        /*Stack<Integer> numberStack = new Stack<>();
+
+        numberStack.push(1);
+        numberStack.push(2);
+        numberStack.push(4);
+
+        numberStack.pop();
+
+        System.out.println(numberStack);*/
+
+        BinarySearchTree<Integer> binarySearchTree = new BinarySearchTree<>();
+        binarySearchTree.insert(10);
+        binarySearchTree.insert(11);
+        binarySearchTree.insert(8);
+        binarySearchTree.insert(7);
+        binarySearchTree.insert(9);
+
+        Node<Integer> node = binarySearchTree.find(8);
+
+        System.out.println(node);
     }
 }
