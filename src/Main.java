@@ -83,14 +83,18 @@ public class Main {
         System.out.println(numberStack);*/
 
         BinarySearchTree<Integer> binarySearchTree = new BinarySearchTree<>();
-        binarySearchTree.insert(10);
+        binarySearchTree.insert(9);
         binarySearchTree.insert(11);
         binarySearchTree.insert(8);
         binarySearchTree.insert(7);
-        binarySearchTree.insert(9);
+        binarySearchTree.insert(10);
 
         Node<Integer> node = binarySearchTree.find(8);
 
         System.out.println(node);
+        System.out.println(binarySearchTree.bfs());
+        System.out.println(binarySearchTree.dfsPreOrd());
+        System.out.println(binarySearchTree.dfsPostOrd());
+        System.out.println(binarySearchTree.dfsinOrd());
     }
 }
