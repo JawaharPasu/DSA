@@ -1,6 +1,7 @@
 import algorithms.*;
 import dataStructures.BST.BinarySearchTree;
 import dataStructures.BST.Node;
+import dataStructures.BinaryHeap.MaxBinaryHeap;
 import dataStructures.DoublyLinkedList.DoublyLinkedList;
 import dataStructures.DoublyLinkedList.DoublyLinkedListGeek;
 import dataStructures.Stack;
@@ -82,7 +83,7 @@ public class Main {
 
         System.out.println(numberStack);*/
 
-        BinarySearchTree<Integer> binarySearchTree = new BinarySearchTree<>();
+       /* BinarySearchTree<Integer> binarySearchTree = new BinarySearchTree<>();
         binarySearchTree.insert(9);
         binarySearchTree.insert(11);
         binarySearchTree.insert(8);
@@ -95,6 +96,21 @@ public class Main {
         System.out.println(binarySearchTree.bfs());
         System.out.println(binarySearchTree.dfsPreOrd());
         System.out.println(binarySearchTree.dfsPostOrd());
-        System.out.println(binarySearchTree.dfsinOrd());
+        System.out.println(binarySearchTree.dfsinOrd());*/
+
+        MaxBinaryHeap binaryHeap = new MaxBinaryHeap();
+        binaryHeap.insert(100);
+        binaryHeap.insert(101);
+        binaryHeap.insert(98);
+        binaryHeap.insert(86);
+        binaryHeap.insert(102);
+        binaryHeap.insert(65);
+        binaryHeap.insert(78);
+
+        System.out.println(binaryHeap);
+        System.out.println(binaryHeap.returnMax());
+        System.out.println(binaryHeap);
+        System.out.println(binaryHeap.returnMax());
+        System.out.println(binaryHeap);
     }
 }
