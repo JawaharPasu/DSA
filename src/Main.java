@@ -5,6 +5,8 @@ import dataStructures.BinaryHeap.MaxBinaryHeap;
 import dataStructures.DoublyLinkedList.DoublyLinkedList;
 import dataStructures.DoublyLinkedList.DoublyLinkedListGeek;
 import dataStructures.Stack;
+import dataStructures.graph.Graph;
+import dataStructures.hashFunctions.HashFunction;
 import dataStructures.singlyLinkedLists.SinglyLinkedList;
 
 import java.util.Arrays;
@@ -98,7 +100,7 @@ public class Main {
         System.out.println(binarySearchTree.dfsPostOrd());
         System.out.println(binarySearchTree.dfsinOrd());*/
 
-        MaxBinaryHeap binaryHeap = new MaxBinaryHeap();
+        /*MaxBinaryHeap binaryHeap = new MaxBinaryHeap();
         binaryHeap.insert(100);
         binaryHeap.insert(101);
         binaryHeap.insert(98);
@@ -111,6 +113,37 @@ public class Main {
         System.out.println(binaryHeap.returnMax());
         System.out.println(binaryHeap);
         System.out.println(binaryHeap.returnMax());
-        System.out.println(binaryHeap);
+        System.out.println(binaryHeap);*/
+//        System.out.println(HashFunction.hash("helloo", 7));
+
+        //      A
+        //     / \
+        //    B   C
+        //    |   |
+        //    D - E
+        //     \ /
+        //      F
+        Graph<String> graph = new Graph<>();
+        graph.addVertex("A");
+        graph.addVertex("B");
+        graph.addVertex("C");
+        graph.addVertex("D");
+        graph.addVertex("E");
+        graph.addVertex("F");
+        graph.addEdge("A", "B");
+        graph.addEdge("A", "C");
+        graph.addEdge("B", "D");
+        graph.addEdge("C", "E");
+        graph.addEdge("D", "E");
+        graph.addEdge("D", "F");
+        graph.addEdge("E", "F");
+        graph.DfsRecursive("A");
+        graph.DfsIterative("A");
+        graph.BfsIterative("A");
+//        System.out.println(graph);
+//        graph.removeEdge("Bangalore", "Hyderabad");
+//        System.out.println(graph);
+//        graph.removeVertex("Chennai");
+//        System.out.println(graph);
     }
 }
