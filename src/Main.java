@@ -5,12 +5,17 @@ import dataStructures.BinaryHeap.MaxBinaryHeap;
 import dataStructures.DoublyLinkedList.DoublyLinkedList;
 import dataStructures.DoublyLinkedList.DoublyLinkedListGeek;
 import dataStructures.Stack;
+import dataStructures.graph.DijkstraShortestPath;
 import dataStructures.graph.Graph;
+import dataStructures.graph.WeightedGraph;
+import dataStructures.graph.WeightedVertex;
 import dataStructures.hashFunctions.HashFunction;
+import dataStructures.priorityqueue.PriorityQueue;
 import dataStructures.singlyLinkedLists.SinglyLinkedList;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.TreeSet;
 
 public class Main {
     public static void main(String[] args) {
@@ -116,7 +121,7 @@ public class Main {
         System.out.println(binaryHeap);*/
 //        System.out.println(HashFunction.hash("helloo", 7));
 
-        //      A
+        /*//      A
         //     / \
         //    B   C
         //    |   |
@@ -139,11 +144,35 @@ public class Main {
         graph.addEdge("E", "F");
         graph.DfsRecursive("A");
         graph.DfsIterative("A");
-        graph.BfsIterative("A");
+        graph.BfsIterative("A");*/
 //        System.out.println(graph);
 //        graph.removeEdge("Bangalore", "Hyderabad");
 //        System.out.println(graph);
 //        graph.removeVertex("Chennai");
 //        System.out.println(graph);
+        WeightedGraph<String> weightedGraph = new WeightedGraph<>();
+        weightedGraph.addVertex("A");
+        weightedGraph.addVertex("B");
+        weightedGraph.addVertex("C");
+        weightedGraph.addVertex("D");
+        weightedGraph.addVertex("E");
+        weightedGraph.addVertex("F");
+
+        weightedGraph.addEdge("A", "B", 4);
+        weightedGraph.addEdge("A", "C", 2);
+        weightedGraph.addEdge("B", "E", 3);
+        weightedGraph.addEdge("C", "D", 2);
+        weightedGraph.addEdge("C", "F", 4);
+        weightedGraph.addEdge("D", "E", 3);
+        weightedGraph.addEdge("D", "F", 1);
+        weightedGraph.addEdge("E", "F", 1);
+
+
+        DijkstraShortestPath<String> dijkstraShortestPath = new DijkstraShortestPath<>("A", "E", weightedGraph);
+
+        dijkstraShortestPath.dijkstra();
+        dijkstraShortestPath.shortestPath();
+
+
     }
 }
