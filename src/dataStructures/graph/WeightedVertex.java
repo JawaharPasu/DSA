@@ -56,14 +56,6 @@ public class WeightedVertex<T extends Comparable> implements Comparable{
             } else {
                 return weightComparison;
             }
-            /*if (this.vertex.compareTo(((WeightedVertex<?>) o).getVertex()) == 0) {
-                return this.weight.compareTo(((WeightedVertex<?>) o).getWeight());
-            } else if (this.vertex.compareTo(((WeightedVertex<?>) o).getVertex())!= 0
-                    && this.weight.compareTo(((WeightedVertex<?>) o).getWeight()) == 0) {
-                return this.vertex.compareTo(((WeightedVertex<?>) o).getVertex());
-            } else {
-                return this.weight.compareTo(((WeightedVertex<?>) o).getWeight());
-            }*/
         }
         return -1;
     }
