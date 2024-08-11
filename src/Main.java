@@ -13,13 +13,12 @@ import dataStructures.hashFunctions.HashFunction;
 import dataStructures.priorityqueue.PriorityQueue;
 import dataStructures.singlyLinkedLists.SinglyLinkedList;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.TreeSet;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
         Integer[] arr = new Integer[]{5, 34, 43, 44, 745634, 63, 94566, 834};
+        Integer[] arr1 = new Integer[]{10, 7, 3, 5, 9, 11, 4};
         //System.out.println(FrequencyCounter.checkFrequency(List.of(1,2,3), List.of(1,2,3,4)));
         //System.out.println(FrequencyCounter.anagramCheck("cohert", "cohert"));
         //MultiplePointer.leastSumZero(List.of(-4,-3,-1,0,2,4,5));
@@ -37,7 +36,7 @@ public class Main {
         //System.out.println(Sorting.pivotIndex(new Integer[]{7, 9, 11, 1, 2, 5, 6, 3, 8}, 0, 8));
         //System.out.println(Sorting.pivotIndex(new Integer[]{3, 1, 2, 5, 6, 7, 11, 9, 8}, 0, 4));
         //System.out.println(Sorting.pivotIndex(new Integer[]{2, 1, 3, 5, 6, 7, 11, 9, 8}, 6, 8));
-        //System.out.println(Arrays.toString(Sorting.quickSort(arr, 0, arr.length-1)));
+        //System.out.println(Arrays.toString(Sorting.quickSort(arr1, 0, arr1.length-1)));
         //System.out.println(Sorting.getDigit(345,1));
         //System.out.println(Sorting.digitCount(1));
         //System.out.println(Sorting.mostDigits(arr));
@@ -150,7 +149,7 @@ public class Main {
 //        System.out.println(graph);
 //        graph.removeVertex("Chennai");
 //        System.out.println(graph);
-        WeightedGraph<String> weightedGraph = new WeightedGraph<>();
+        /*WeightedGraph<String> weightedGraph = new WeightedGraph<>();
         weightedGraph.addVertex("A");
         weightedGraph.addVertex("B");
         weightedGraph.addVertex("C");
@@ -171,8 +170,37 @@ public class Main {
         DijkstraShortestPath<String> dijkstraShortestPath = new DijkstraShortestPath<>("A", "E", weightedGraph);
 
         dijkstraShortestPath.dijkstra();
-        dijkstraShortestPath.shortestPath();
+        dijkstraShortestPath.shortestPath();*/
 
+        /*Integer[] coins = {1, 5, 10, 25};
+        Integer n = coins.length;
+        Integer sum = 5;
+
+        Integer[][] dp = new Integer[n + 1][sum + 1];
+        for (Integer[] row : dp)
+            Arrays.fill(row, -1);
+
+        //Integer num = 45;
+        Long duration1 = System.currentTimeMillis();
+        //System.out.println(DynamicMemoization.fibonacci(num, new Integer[num]));
+        System.out.println(Recursion.countCoins(coins, n, sum));
+        Long timeTaken = System.currentTimeMillis() - duration1;
+        System.out.println(timeTaken);
+
+        Long duration2 = System.currentTimeMillis();
+        //System.out.println(Recursion.fibonacci(num));
+        System.out.println(DynamicMemoization.countCoins(coins, n , sum, dp));
+        Long timeTaken2 = System.currentTimeMillis() - duration2;
+        System.out.println(timeTaken2);
+
+        Long duration3 = System.currentTimeMillis();
+        //DynamicTabulated.fibonacci(num);
+        System.out.println(DynamicTabulated.countCoinsOptimised(coins, n, sum));
+        Long timeTaken3 = System.currentTimeMillis() - duration3;
+        System.out.println(timeTaken3);*/
+        String[] grid = {"/\\","\\/"};
+        char[] subgrid = grid[0].toCharArray();
+        System.out.println(subgrid);
 
     }
 }

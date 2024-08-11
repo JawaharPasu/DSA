@@ -1,5 +1,9 @@
 package algorithms;
 
+import com.sun.source.tree.IfTree;
+
+import java.util.Arrays;
+
 public class Randoms {
 
     // print the patterns like this for any given required rows
@@ -45,4 +49,5 @@ public class Randoms {
             System.out.println();
         }
     }
+
 }
