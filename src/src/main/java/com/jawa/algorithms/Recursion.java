@@ -1,4 +1,4 @@
-package algorithms;
+package com.jawa.algorithms;
 
 public class Recursion {
 

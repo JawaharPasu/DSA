@@ -1,19 +1,4 @@
-import algorithms.*;
-import dataStructures.BST.BinarySearchTree;
-import dataStructures.BST.Node;
-import dataStructures.BinaryHeap.MaxBinaryHeap;
-import dataStructures.DoublyLinkedList.DoublyLinkedList;
-import dataStructures.DoublyLinkedList.DoublyLinkedListGeek;
-import dataStructures.Stack;
-import dataStructures.graph.DijkstraShortestPath;
-import dataStructures.graph.Graph;
-import dataStructures.graph.WeightedGraph;
-import dataStructures.graph.WeightedVertex;
-import dataStructures.hashFunctions.HashFunction;
-import dataStructures.priorityqueue.PriorityQueue;
-import dataStructures.singlyLinkedLists.SinglyLinkedList;
-
-import java.util.*;
+import com.jawa.algorithms.MultiplePointer;
 
 public class Main {
     public static void main(String[] args) {
@@ -198,9 +183,19 @@ public class Main {
         System.out.println(DynamicTabulated.countCoinsOptimised(coins, n, sum));
         Long timeTaken3 = System.currentTimeMillis() - duration3;
         System.out.println(timeTaken3);*/
-        String[] grid = {"/\\","\\/"};
+        /*String[] grid = {"/\\","\\/"};
         char[] subgrid = grid[0].toCharArray();
         System.out.println(subgrid);
 
+        String str = "abracada";
+        char[] chars = str.toCharArray();
+
+        System.out.println(chars);*/
+
+        System.out.println(MultiplePointer.lengthOfLongestSubstring("pwwkew"));
+        double median = 0;
+
+
     }
+
 }

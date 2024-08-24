@@ -1,6 +1,8 @@
-package algorithms;
+package com.jawa.algorithms;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class MultiplePointer {
 
@@ -93,5 +95,26 @@ public class MultiplePointer {
             if (mainString.charAt(i) != subString.charAt(j) && j >= 1) j=0;
         }
         return j != 0;
+    }
+
+
+    public static int lengthOfLongestSubstring(String s) {
+        Set<Character> characterSet = new HashSet<>();
+        int n = s.length();
+        int i=0;
+        int length = 0;
+        for (int j=0; j<n ; j++) {
+            if (!characterSet.contains(s.charAt(j))) {
+                characterSet.add(s.charAt(j));
+                length = Math.max(length, j-i+1);
+            } else {
+                while (characterSet.contains(s.charAt(j))) {
+                    characterSet.remove(s.charAt(i));
+                    i++;
+                }
+                characterSet.add(s.charAt(j));
+            }
+        }
+        return length;
     }
 }

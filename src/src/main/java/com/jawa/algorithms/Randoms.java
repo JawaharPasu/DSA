@@ -1,4 +1,4 @@
-package algorithms;
+package com.jawa.algorithms;
 
 import com.sun.source.tree.IfTree;
 
