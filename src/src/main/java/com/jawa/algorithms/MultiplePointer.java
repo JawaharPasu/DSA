@@ -99,7 +99,7 @@ public class MultiplePointer {
 
 
     public static int lengthOfLongestSubstring(String s) {
-        Set<Character> characterSet = new HashSet<>();
+        Set<Character> characterSet = new HashSet();
         int n = s.length();
         int i=0;
         int length = 0;
@@ -116,5 +116,16 @@ public class MultiplePointer {
             }
         }
         return length;
+    }
+
+    public static int removeDuplicates(int[] nums) {
+        int j = 1;
+        for (int i = 1; i < nums.length; i++) {
+            if (j == 1 || nums[i] != nums[j - 2]) {
+                nums[j++] = nums[i];
+            }
+        }
+        return j;
+
     }
 }
