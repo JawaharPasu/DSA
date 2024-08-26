@@ -128,4 +128,21 @@ public class MultiplePointer {
         return j;
 
     }
+
+    public static int maxProfit(int[] prices) {
+        int i=0;
+        int j=1;
+        int price=0;
+        if (prices.length ==0 || prices.length ==0) return 0;
+        while(j<prices.length) {
+            if (prices[j]>prices[i]) {
+                price = Math.max(price, prices[j]-prices[i]);
+            }else if(prices[i] > prices[j]) {
+                i=j;
+            }
+            j++;
+        }
+        return price;
+
+    }
 }

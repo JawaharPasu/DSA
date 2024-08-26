@@ -2,6 +2,8 @@ package com.jawa.algorithms;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.LinkedList;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class MultiplePointerTest {
@@ -23,5 +25,14 @@ public class MultiplePointerTest {
         int expected = 7;
         int actual = MultiplePointer.removeDuplicates(nums);
         assertEquals(actual, expected);
+    }
+
+    @Test
+    void testMaxProfit1() {
+        int[] prices = {3,3};
+        int expected = 0;
+        int actual = MultiplePointer.maxProfit(prices);
+        LinkedList<String> list = new LinkedList<>();
+        assertEquals(expected, actual);
     }
 }
