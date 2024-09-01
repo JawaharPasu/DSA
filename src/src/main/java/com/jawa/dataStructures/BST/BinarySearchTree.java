@@ -1,4 +1,4 @@
-package dataStructures.BST;
+package com.jawa.dataStructures.BST;
 
 import java.util.Deque;
 import java.util.LinkedList;
