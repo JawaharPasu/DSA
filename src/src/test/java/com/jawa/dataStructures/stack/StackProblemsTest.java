@@ -34,4 +34,18 @@ public class StackProblemsTest {
         assertEquals(true, actual);
     }
 
+    @Test
+    void simplifyPathTest() {
+        String str = "/home/user/Documents/../Pictures";
+        String result = StackProblems.simplifyPath(str);
+        System.out.println(result);
+    }
+
+    @Test
+    void simplifyPathTest2() {
+        String str = "/../";
+        String result = StackProblems.simplifyPath(str);
+        System.out.println(result);
+    }
+
 }

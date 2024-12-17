@@ -1,4 +1,4 @@
-package dataStructures.singlyLinkedLists;
+package com.jawa.dataStructures.singlyLinkedLists;
 
 public class Node<T> {
     T val;

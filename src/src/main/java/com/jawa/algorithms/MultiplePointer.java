@@ -145,4 +145,23 @@ public class MultiplePointer {
         return price;
 
     }
+
+    public static boolean canConstruct(String ransomNote, String magazine) {
+
+        int[] state = new int[26];
+        int index = 0;
+
+        for(char c : ransomNote.toCharArray()){
+            index = magazine.indexOf(c, state[c - 'a']);
+
+            if (index == -1){
+                return false;
+            }
+
+            state[c-'a'] = index +1;
+        }
+
+        return true;
+
+    }
 }

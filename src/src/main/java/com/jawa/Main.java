@@ -1,4 +1,9 @@
 import com.jawa.algorithms.MultiplePointer;
+import com.jawa.dataStructures.BST.BinarySearchTree;
+import com.jawa.dataStructures.BST.Node;
+
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -74,12 +79,14 @@ public class Main {
 
         System.out.println(numberStack);*/
 
-       /* BinarySearchTree<Integer> binarySearchTree = new BinarySearchTree<>();
+        BinarySearchTree<Integer> binarySearchTree = new BinarySearchTree<>();
+        binarySearchTree.insert(12);
+        binarySearchTree.insert(10);
+        binarySearchTree.insert(17);
         binarySearchTree.insert(9);
         binarySearchTree.insert(11);
-        binarySearchTree.insert(8);
-        binarySearchTree.insert(7);
-        binarySearchTree.insert(10);
+        binarySearchTree.insert(15);
+        binarySearchTree.insert(18);
 
         Node<Integer> node = binarySearchTree.find(8);
 
@@ -87,7 +94,7 @@ public class Main {
         System.out.println(binarySearchTree.bfs());
         System.out.println(binarySearchTree.dfsPreOrd());
         System.out.println(binarySearchTree.dfsPostOrd());
-        System.out.println(binarySearchTree.dfsinOrd());*/
+        System.out.println(binarySearchTree.dfsinOrd());
 
         /*MaxBinaryHeap binaryHeap = new MaxBinaryHeap();
         binaryHeap.insert(100);
@@ -192,9 +199,16 @@ public class Main {
 
         System.out.println(chars);*/
 
+
         System.out.println(MultiplePointer.lengthOfLongestSubstring("pwwkew"));
         double median = 0;
 
+        Optional got = Optional.ofNullable("GOT");
+        Map<Integer, List<String>> valmap = new HashMap<>();
+        List<String> list = new ArrayList<>();
+        list.add("abc");
+        valmap.put(1, list);
+        valmap.get(1).add("bca");
 
     }
 

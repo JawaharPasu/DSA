@@ -29,4 +29,24 @@ public class StackProblems {
         if (list.size()==0) return true;
         return false;
     }
+
+    public static String simplifyPath(String path) {
+        String[] splits = path.split("/");
+        LinkedList<String> res = new LinkedList<>();
+        res.push(splits[0]);
+        if(res.peek().equals("")) res.removeLast();
+        for (int i=1; i<splits.length; i++) {
+            if (splits[i].equals("")) continue;
+            else if (splits[i].equals("..") && res.size()>0) {
+                res.pop();
+            }else if (!splits[i].equals("..")) res.push(splits[i]);
+        }
+        StringBuilder sb = new StringBuilder();
+        sb.append("/");
+        while(res.size()!=0){
+            sb.append(res.removeLast());
+            if (res.size()!=0) sb.append("/");
+        }
+        return sb.toString();
+    }
 }

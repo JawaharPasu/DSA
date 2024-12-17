@@ -35,4 +35,12 @@ public class MultiplePointerTest {
         LinkedList<String> list = new LinkedList<>();
         assertEquals(expected, actual);
     }
+
+    @Test
+    void testCanConstruct() {
+        String magazine = "beupka";
+        String ransom = "ea";
+        System.out.println(magazine.indexOf('a',2));
+        assertEquals(true, MultiplePointer.canConstruct(ransom,magazine));
+    }
 }
